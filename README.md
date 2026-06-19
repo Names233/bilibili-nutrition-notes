@@ -48,21 +48,31 @@ BiliNote 本地部署，生成 Markdown 笔记
 
 ## 技术方案
 
-### 1. 获取历史记录
+### 1. 登录与 Cookie
+
+- 扫码登录获取 cookie
+- cookie 本地存储，过期后重新扫码
+
+### 2. 获取历史记录
 
 - API: `GET https://api.bilibili.com/x/web-interface/history/cursor`
 - 参数: max, view_at, business
-- 需要登录 cookie
+- 已处理记录：本地记录已生成笔记的视频 ID，避免重复
 
-### 2. 生成笔记
+### 3. 生成笔记
 
 - 本地部署 BiliNote: https://github.com/JefferyHcool/BiliNote
 - 输入视频链接，输出 Markdown 笔记
 
-### 3. 上传笔记
+### 4. 上传笔记
 
+- 目录结构：`B站视频/YYYYMMDD/分类/标题.md`
 - git push 到 NAMESPACE-NOTE 仓库
-- 按日期/分类组织目录结构
+
+### 5. 定时任务
+
+- 每天自动执行
+- 不限数量，处理所有符合条件的视频
 
 ## 相关项目
 
