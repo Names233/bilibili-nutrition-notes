@@ -67,6 +67,13 @@ BiliNote 本地部署，生成 Markdown 笔记
 ### 4. 上传笔记
 
 - 目录结构：`B站视频/YYYYMMDD/分类/标题.md`
+- 笔记元数据（YAML front matter）：
+  - 原视频链接
+  - UP 主
+  - 发布日期
+  - 观看日期
+  - 分区/分类
+  - 标签
 - git push 到 NAMESPACE-NOTE 仓库
 
 ### 5. 定时任务
